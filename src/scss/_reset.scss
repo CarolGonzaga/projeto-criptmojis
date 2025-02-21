@@ -1,0 +1,15 @@
+@import 'variables';
+
+@font-face {
+  font-family: "SugoDisplay";
+  src: url("../assets/fonts/Sugo-Pro-Classic-Light-trial.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-secondary;
+}

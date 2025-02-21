@@ -1,0 +1,471 @@
+@import "variables";
+@import "reset";
+@import "mixins";
+
+/* Global */
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Main Container */
+.main {
+  width: 100%;
+  height: 100vh;
+  max-width: 840px;
+  @include flex-column;
+  justify-content: space-between;
+}
+
+/* Header */
+.header {
+  background-color: $blue-900;
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+  color: $beige-300;
+  @include flex-column;
+  justify-content: space-between;
+
+  .top {
+    background-color: $blue-900;
+    width: 100%;
+    height: 100%;
+    max-height: 70px;
+    padding: 0.938rem 1.25rem;
+    color: $beige-300;
+    @include flex-center;
+    justify-content: space-between;
+
+    h1 {
+      font-size: 2.5rem;
+      letter-spacing: 0.1rem;
+      font-family: "SugoDisplay", serif;
+    }
+
+    > div {
+      @include flex-center;
+      gap: 10px;
+
+      i {
+        font-size: 1.6rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .score-content {
+    width: 100%;
+    padding: 0.3rem 5%;
+    @include flex-center;
+    justify-content: space-between;
+    background-color: $blue-700;
+
+    .score-bar {
+      @include flex-center;
+      justify-content: space-between;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      gap: 0.4rem;
+      padding: 0.5rem 0;
+
+      .score-title {
+        color: $blue-900;
+        font-weight: 700;
+        display: flex;
+      }
+
+      .score-info {
+        font-size: 0.7rem;
+        color: $beige-300;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+/* Game Content */
+.game-content {
+  height: 100%;
+  min-height: 60vh;
+  padding: 1rem 5%;
+  background-color: $blue-700;
+  @include flex-column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+
+  /* Password Panel */
+  .password-panel {
+    width: 100%;
+    padding: 0.5rem 1.25rem;
+    background-color: $beige-300;
+    border-radius: 50px;
+    box-shadow: 3px 3px 5px $shadow;
+    text-shadow: 1px 1px 1px $shadow;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: $beige-700;
+    @include flex-center;
+    justify-content: space-around;
+  }
+
+  /* Boardgame */
+  .boardgame {
+    width: 100%;
+    height: 60%;
+    box-shadow: 3px 3px 5px $shadow;
+    background-color: $beige-700;
+    border-radius: 10px;
+    @include flex-column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .boardgame-title {
+      width: 100%;
+      padding: 15px 10px;
+      color: $blue-900;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03rem;
+      text-align: center;
+      @include flex-row;
+      justify-content: space-between;
+    }
+
+    .attempts-content {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      @include flex-column;
+      align-items: center;
+      gap: clamp(5px, 3vw, 20px);
+
+      .sequence {
+        width: 100%;
+        max-height: 60px;
+        padding: 0 10px;
+        margin-bottom: 15px;
+        display: grid;
+        grid-template-columns: repeat(5, auto) 2% 16%;
+        gap: 2px;
+
+        .item {
+          @include flex-center;
+          background-color: $beige-300;
+          border-radius: 5px;
+          font-size: clamp(1rem, 8vw, 3rem);
+          text-shadow: 1px 1px 1px $shadow;
+        }
+
+        .result {
+          text-align: center;
+          padding: 5px 2px;
+          display: grid;
+          grid-template-areas:
+            "a b"
+            "c c"
+            "d e";
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: auto auto auto;
+          justify-items: center;
+          align-items: center;
+        }
+
+        svg {
+          width: clamp(0.5rem, 2vw, 1rem);
+          height: clamp(0.5rem, 2vw, 1rem);
+          display: block;
+        }
+
+        .item-1 {
+          grid-area: a;
+        }
+        .item-2 {
+          grid-area: b;
+        }
+        .item-3 {
+          grid-area: c;
+        }
+        .item-4 {
+          grid-area: d;
+        }
+        .item-5 {
+          grid-area: e;
+        }
+
+        .wrong {
+          fill: rgba(167, 167, 167, 0.712);
+          stroke: darkgray;
+          stroke-width: ".5";
+          opacity: 0.3;
+        }
+
+        .match {
+          fill: $gray-900;
+          opacity: 1;
+        }
+
+        .partial {
+          fill: $white;
+          opacity: 1;
+        }
+      }
+    }
+
+    .boardgame-botton {
+      width: 100%;
+      padding: 10px;
+      color: $blue-900;
+      text-transform: uppercase;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.03rem;
+      text-align: center;
+      @include flex-row;
+      justify-content: end;
+      align-items: center;
+      gap: 5px;
+
+      > span {
+        background-color: $beige-300;
+        padding: 4px 6px;
+        border-radius: 100%;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  /* Player Bet */
+  .player-bet {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+    @include flex-center;
+    justify-content: space-between;
+    gap: 2%;
+
+    .bet-emojis {
+      height: 100%;
+      width: 80%;
+      padding: 1rem;
+      @include flex-center;
+      justify-content: space-between;
+      box-shadow: 2px 2px 2px $black-transp;
+      background-color: $blue-900;
+      border-radius: 50px;
+      font-size: clamp(1.2rem, 6vw, 2rem);
+    }
+
+    .bet-circle {
+      background-color: $black-transp;
+      padding: 0.3rem 0.4rem;
+      border-radius: 100%;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $gray-900;
+      }
+    }
+
+    .bet-button {
+      @include flex-center;
+      background-color: $blue-900;
+      box-shadow: 2px 2px 2px $black-transp;
+      border-radius: 50px;
+      cursor: pointer;
+      height: 100%;
+      width: 20%;
+      color: $beige-700;
+      font-size: calc(80% + 1rem);
+
+      &:hover {
+        color: $beige-700;
+      }
+    }
+
+    .block {
+      pointer-events: none;
+    }
+  }
+}
+
+/* Footer */
+.footer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  max-height: 20%;
+  padding: 10px;
+  background-color: $blue-900;
+  color: $beige-300;
+  @include flex-center;
+
+  .title {
+    position: absolute;
+    top: -12px;
+    width: 60%;
+    padding: 0.2rem;
+    background-color: $white;
+    border-radius: 50px;
+    color: $blue-900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.05rem;
+    text-align: center;
+  }
+
+  .emojis-container {
+    @include flex-center;
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 10px;
+      max-width: 400px;
+      list-style: none;
+    }
+
+    li {
+      @include flex-center;
+    }
+
+    button {
+      width: 100%;
+      height: 50px;
+      font-size: clamp(1.5rem, 9vw, 2.5rem);
+      background-color: transparent;
+      border: none;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        text-shadow: 2px 2px 1px $shadow;
+      }
+
+      &:active {
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+.alert-box {
+  max-width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5px 10px;
+  background-color: $white-transp;
+  color: $gray-900;
+  z-index: 999;
+  border-radius: 5px;
+  @include flex-column;
+  gap: 10px;
+
+  .modal-box {
+    @include flex-column;
+    gap: 10px;
+    position: relative;
+
+    h1 {
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 0.8rem;
+      text-align: justify;
+    }
+  }
+
+  .close-alert {
+    padding: 2px 6px;
+    border-radius: 5px;
+    background-color: $gray-900;
+    color: $white;
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.nivel-box {
+  width: 200px;
+  position: absolute;
+  top: 55px;
+  right: 17px;
+  background-color: $blue-900;
+  color: $beige-300;
+  z-index: 999;
+  border-radius: 5px;
+  border: 1px solid darken($color: $blue-900, $amount: 10%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  @include flex-column;
+  gap: 10px;
+  opacity: 0;
+  transform: translate(30px, -30px) scale(0.5);
+  pointer-events: none; /* Impede cliques quando oculto */
+
+  .modal-box {
+    @include flex-column;
+    gap: 10px;
+
+    .title-box {
+      background-color: $black-transp;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+
+      h1 {
+        font-size: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $font-secondary;
+      }
+    }
+
+    .btn-box {
+      @include flex-column;
+      @include flex-center;
+      gap: 15px;
+      padding: 10px;
+
+      .nivel-option {
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: background 0.3s;
+      }
+    }
+  }
+}
+
+.show {
+  animation: showMenu 0.4s ease-out forwards;
+  pointer-events: auto; /* Permite cliques quando visível */
+}
+
+@keyframes showMenu {
+  0% {
+    opacity: 0;
+    transform: translate(30px, -30px) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@import "scrollbar";
+@import "responsive-game";

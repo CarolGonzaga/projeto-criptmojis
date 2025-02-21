@@ -1,0 +1,17 @@
+{
+  "name": "projeto-criptmojis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build:sass": "sass styles/style.scss styles/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.85.0",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descubra a Senha - Criptmojis</title>
+
+  <!-- FONTES -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&family=Poppins:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- ESTILO CSS -->
+  <link rel="stylesheet" href="./src/styles/style.css">
+  <link rel="stylesheet" href="./src/styles/game.css">
+  <!-- ICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+  <div class="index">
+    <header>
+      <h1>Criptmojis</h1>
+    </header>
+
+    <section>
+      <div class="main-logo">
+        <img src="./src/assets/images/logo.png" alt="imagem de um emoji vestido como um detetive segurando uma lupa.">
+      </div>
+    </section>
+
+    <main>
+      <div class="main-nivel">
+        <div class="nivel-text">
+          <p>Selecione a Dificuldade:</p>
+        </div>
+
+        <div class="nivel-buttons">
+          <button class="nivel-button" id="button-easy">
+            <img src="./src/assets/images/FACIL.png" alt="">
+            <p>Tranquilo</p>
+          </button>
+
+          <button class="nivel-button" id="button-normal">
+            <img src="./src/assets/images/MEDIO.png" alt="">
+            <p>Moderado</p>
+          </button>
+
+          <button class="nivel-button" id="button-hard">
+            <img src="./src/assets/images/DIFICIL.png" alt="">
+            <p>Insano</p>
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <div class="section-button">
+      <button id="rulesButton">Ver regras</button>
+    </div>
+  </div>
+
+  <section class="section-container">
+    <div class="section-rules">
+      <button id="closeRules" class="close-btn">Voltar</button>
+      <div class="rules">
+        <h2>Regras do Criptmojis</h2>
+        <div class="rules-container">
+          <h3>🎯 Objetivo do Jogo</h3>
+          <p>Descubra a sequência secreta de 5 emojis antes de esgotar suas tentativas.</p>
+        </div>
+        <div class="rules-container">
+          <h3>🕹️ Como Jogar</h3>
+          <div class="how-play">
+            <h4>1️⃣ Escolha seu nível de dificuldade:</h4>
+            <ul>
+              <li>
+                <img src="./src/assets/images/regras[0].png" class="img-rules">
+              </li>
+              <li>
+                <p>Modo <strong>Tranquilo</strong>: 10 tentativas para acertar.</p>
+                <p>Modo <strong>Moderado</strong>: 8 tentativas para acertar.</p>
+                <p>Modo <strong>Insano</strong>: 6 tentativas para acertar.</p>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div class="how-play">
+            <h4>2️⃣ Monte sua tentativa:</h4>
+            <ul>
+              <li>
+                <p>Escolha 5 emojis diferentes entre os disponíveis.</p>
+                <p class="emojis">❤️ 😭 🔥🌻 😎 😜 ⭐ 🐱 🐞 🎁 🎲 💡</p>
+              </li>
+              <li>
+                <p>Clique no emoji para adicionar ao campo de envio.</p>
+                <img src="./src/assets/images/regras[2].png" class="img-rules">
+              </li>
+              <li>
+                <p>Você pode trocar um emoji da sequência clicando nele.</p>
+                <img src="./src/assets/images/regras[3].png" class="img-rules">
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div class="how-play">
+            <h4>3️⃣ Enviando sua tentativa:</h4>
+            <ul>
+              <li>Após clicar no botão Enviar, o jogo irá comparar sua sequência com a senha secreta.</li>
+              <li>Após avaliar todos os emojis, a tela exibirá quantos você acertou e quantos não fazem parte da senha.
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <p><strong>Resultados possíveis:</strong></p>
+              </li>
+              <li>
+                <p>⚪ - Emoji correto, mas na posição errada.</p>
+                <p>⚫ - Emoji correto e na posição correta.</p>
+                <p><span class="ball-null">O</span> - Emoji não faz parte do código.</p>
+              </li>
+              <li>
+                <p><strong>Exemplos de resultados:</strong></p>
+              </li>
+              <li>
+                <p>Imagine que a senha secreta seja: "❤️ - 😭 - 🔥 - 🐞 - 😎".</p>
+              </li>
+              <li>
+                <p><strong>Primeira tentativa:</strong></p>
+                <img src="./src/assets/images/regras[4].png" alt="">
+                <p>O resultado será de 3 pinos brancos, pois você acertou que "❤️ - 😭 - 🔥" estão na senha, porém
+                  na posição errada.</p>
+              </li>
+              <li>
+                <p><strong>Segunda tentativa:</strong></p>
+                <img src="./src/assets/images/regras[5].png" alt="">
+                <p>Já na segunda tentativa você acertou a posição da 🐞 e recebeu um pino preto. Os 😭 - 🔥 você
+                  errou a posição, por isso recebeu dois pinos brancos.</p>
+              </li>
+              <li>
+                <p><strong>Nota:</strong></p>
+                <p>A ordem dos pinos não está relacionada com a posição do emojis. O resultado será
+                  preenchido automáticamente, começando com os pinos pretos, depois brancos e em seguida pelos vazios, se houverem.</p>
+              </li>
+            </ul>
+          </div>
+          <hr>
+          <div class="how-play">
+            <h4>4️⃣ Continue jogando até:</h4>
+            <ul>
+              <li>
+                <p>Acertar a sequência secreta = <span class="important">Vitória 🎉</span></p>
+                <p>ou</p>
+                <p>Esgotar as tentativas = <span class="important">Derrota 😢</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      
+        <div class="rules-container">
+          <h3>🏅 Pontuação</h3>
+          <p>O nível de dificuldade define a pontuação da partida. Além disso, você ganhará <strong>+10 pontos</strong> por tentativa que não usou.</p>
+        </div>
+        <div class="rules-container">
+          <h3>📝 Informações adicionais</h3>
+          <p>Menu superior:</p>
+          <p>🔄 Reiniciar partida - - ⚙️ Alterar dificuldade</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Desenvolvido por <a href="https://linktr.ee/anacquesta">© Carol Gonzaga</a></p>
+  </footer>
+
+  <script src="dist/main.js" defer></script>
+</body>
+
+</html>
