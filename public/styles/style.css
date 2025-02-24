@@ -1,5 +1,5 @@
 /* Error: Module loop: this module is already being loaded.
- *   ,--> src\scss\_responsive-index.scss
+ *   ,--> src\scss\_responsive-game.scss
  * 1 | @use "index";
  *   | ^^^^^^^^^^^^ new load
  *   '
@@ -7,9 +7,9 @@
  * 1 | @use "index";
  *   | ============ original load
  *   '
- *   src\scss\_responsive-index.scss 1:1  @forward
- *   src\scss\_index.scss 2:1             @use
- *   src\scss\style.scss 1:1              root stylesheet */
+ *   src\scss\_responsive-game.scss 1:1  @forward
+ *   src\scss\_index.scss 6:1            @use
+ *   src\scss\style.scss 1:1             root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -19,5 +19,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > src\\scss\\_responsive-index.scss\a 1 \2502  @use "index";\d\a   \2502  ^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > src\\scss\\style.scss\a 1 \2502  @use "index";\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   src\\scss\\_responsive-index.scss 1:1  @forward\a   src\\scss\\_index.scss 2:1             @use\a   src\\scss\\style.scss 1:1              root stylesheet';
+  content: 'Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > src\\scss\\_responsive-game.scss\a 1 \2502  @use "index";\d\a   \2502  ^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > src\\scss\\style.scss\a 1 \2502  @use "index";\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   src\\scss\\_responsive-game.scss 1:1  @forward\a   src\\scss\\_index.scss 6:1            @use\a   src\\scss\\style.scss 1:1             root stylesheet';
 }
