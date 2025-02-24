@@ -9,26 +9,64 @@
     gap: 2px;
 
     .bet-emojis {
-      padding: .5rem;
+      padding: 0.5rem;
       font-size: clamp(1rem, 5vw, 2rem);
+    }
+  }
+
+  /* Footer */
+  .footer {
+    .emojis-container {
+      ul {
+        gap: 20px;
+        margin-top: 10px;
+      }
+
+      button {
+        width: 100%;
+        height: 25px;
+        font-size: clamp(1rem, 7vw, 2.5rem);
+      }
     }
   }
 }
 
-/* Footer */
-.footer {
+@media (min-width: 750px) and (min-height: 700px) {
+  /* Footer */
+  .footer {
 
-  .emojis-container {
+    .emojis-container {
+      ul {
+        max-width: 80%;
+        height: 100%;
+        gap: 20px;
+        margin-bottom: 20px;
+      }
 
-    ul {
-      gap: 10px;
-      margin-top: 10px;
+      button {
+        height: 70px;
+        font-size: clamp(3rem, 10vw, 3.5rem);
+      }
     }
+  }
+}
 
-    button {
-      width: 100%;
-      height: 25px;
-      font-size: clamp(1.5rem, 9vw, 2.5rem);
+@media (min-width: 1024px) and (min-height: 700px) {
+  /* Footer */
+  .footer {
+
+    .emojis-container {
+      ul {
+        max-width: 90%;
+        height: 100%;
+        gap: 50px;
+        margin-bottom: 20px;
+      }
+
+      button {
+        height: 30px;
+        font-size: clamp(3rem, 10vw, 3.2rem);
+      }
     }
   }
 }

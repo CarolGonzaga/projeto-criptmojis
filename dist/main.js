@@ -244,7 +244,7 @@ function setupSendButton() {
 }
 // **Função para iniciar o jogo**
 function startGame(attempts, selectedDifficulty) {
-    numAttempts = attempts - 1;
+    numAttempts = attempts;
     difficulty = selectedDifficulty;
     // Atualiza a interface do jogo
     const body = document.querySelector("body");
@@ -257,7 +257,6 @@ function startGame(attempts, selectedDifficulty) {
         setupNivelMenu();
         secretCode = getEmojis();
     }
-    console.log(`Jogo iniciado! Dificuldade: ${difficulty}, Tentativas: ${numAttempts}, Senha: ${secretCode}`);
 }
 // **Função auxiliar para formatar número de tentativas**
 function formatNumAttempts(numAttempts) {
@@ -298,14 +297,9 @@ function getEmojis() {
 }
 // **Função para finalizar o jogo**
 function endGame() {
-    if (numAttempts < 0) {
-        showEndGameMessage("Fim de Jogo!");
-        numAttempts = 0;
-        updateUI();
-        showCode();
-        disableGameControls();
-    }
-    else if (compareLists(secretCode, selectedEmojis)) {
+    numAttempts--;
+    updateUI();
+    if (compareLists(secretCode, selectedEmojis)) {
         showEndGameMessage("Parabéns! Você ganhou! 🎉");
         updateUI();
         showCode();
@@ -313,9 +307,12 @@ function endGame() {
         updateScore();
         disableGameControls();
     }
-    else {
+    else if (numAttempts <= 0) {
+        showEndGameMessage("Fim de Jogo! 😢");
+        numAttempts = 0;
         updateUI();
-        numAttempts--;
+        showCode();
+        disableGameControls();
     }
 }
 function showEndGameMessage(message) {
@@ -379,7 +376,6 @@ function compareLists(list1, list2) {
     return list1.every((item, index) => item === list2[index]);
 }
 function resetGame() {
-    console.log("Reiniciando o jogo...");
     // Gera uma nova senha
     secretCode = getEmojis();
     // Reseta as tentativas conforme o nível de dificuldade atual
@@ -395,7 +391,6 @@ function resetGame() {
     updateUI();
     clearBetDisplay();
     enableGameControls();
-    console.log(`Novo jogo iniciado! Dificuldade: ${difficulty}, Tentativas: ${numAttempts}, Senha: ${secretCode}`);
 }
 function setupResetButton() {
     const resetBtn = document.querySelector("#btn-reset");
@@ -404,13 +399,11 @@ function setupResetButton() {
         return;
     }
     resetBtn.addEventListener("click", () => {
-        const userResponse = confirm("Deseja reiniciar a partida?");
+        const userResponse = confirm("Deseja iniciar uma nova partida?");
         if (userResponse) {
-            console.log("Usuário clicou em OK!");
             resetGame();
         }
         else {
-            console.log("Usuário clicou em Cancelar!");
             return;
         }
     });
@@ -455,7 +448,6 @@ function changeDifficulty(newDifficulty) {
     difficulty = newDifficulty;
     numAttempts = newDifficulty === "Tranquilo" ? 10 : newDifficulty === "Moderado" ? 8 : 6;
     startGame(numAttempts, difficulty);
-    console.log(`Dificuldade alterada para: ${difficulty}. Novas tentativas: ${numAttempts}`);
 }
 function generateGameHTML() {
     console.log("Começou o jogo!");
@@ -464,7 +456,7 @@ function generateGameHTML() {
     <div id="alert-box" class="alert-box hidden">
       <div class="modal-box">
         <h1>Aviso!</h1>
-        <p id="alert-message">Lorem ipsum dolor, sit amet consectetur adipisicing elit. At odio in laboriosam, quia iste expedita repudiandae officiis reiciendis natus modi eaque quaerat porro, facere, doloremque adipisci! Distinctio quos eum sint.</p>
+        <p id="alert-message"></p>
       </div>
       <button class="close-alert" id="close-btn">Ok</button>
     </div>
@@ -525,7 +517,7 @@ function generateGameHTML() {
 
         <div class="boardgame-botton">
           <p>tentativas: </p>
-          <span id="numAttempts">${formatNumAttempts(numAttempts + 1)}</span>
+          <span id="numAttempts">${formatNumAttempts(numAttempts)}</span>
         </div>
       </section>
 

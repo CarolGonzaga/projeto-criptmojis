@@ -1,6 +1,8 @@
 @import "variables";
 @import "reset";
 @import "mixins";
+@import "scrollbar";
+
 
 /* Global */
 body {
@@ -47,6 +49,7 @@ body {
     > div {
       @include flex-center;
       gap: 10px;
+      position: relative;
 
       i {
         font-size: 1.6rem;
@@ -230,7 +233,7 @@ body {
       gap: 5px;
 
       > span {
-        background-color: $beige-300;
+        background-color: $white;
         padding: 4px 6px;
         border-radius: 100%;
         font-size: 0.8rem;
@@ -357,7 +360,9 @@ body {
 }
 
 .alert-box {
+  width: 40%;
   max-width: 450px;
+  height: 150px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -368,11 +373,11 @@ body {
   z-index: 999;
   border-radius: 5px;
   @include flex-column;
-  gap: 10px;
+  justify-content: space-around;
 
   .modal-box {
     @include flex-column;
-    gap: 10px;
+    gap: 20px;
     position: relative;
 
     h1 {
@@ -382,7 +387,7 @@ body {
 
     p {
       font-size: 0.8rem;
-      text-align: justify;
+      text-align: center;
     }
   }
 
@@ -398,8 +403,8 @@ body {
 .nivel-box {
   width: 200px;
   position: absolute;
-  top: 55px;
-  right: 17px;
+  top: 35px;
+  right: 3%;
   background-color: $blue-900;
   color: $beige-300;
   z-index: 999;
@@ -467,5 +472,4 @@ body {
   display: none;
 }
 
-@import "scrollbar";
 @import "responsive-game";

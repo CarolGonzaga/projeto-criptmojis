@@ -1,6 +1,7 @@
 @import "reset";
 @import "responsive-index";
 @import "variables";
+@import "scrollbar";
 
 /* Mixins */
 @mixin flex-center {
@@ -221,6 +222,11 @@ main {
         font-size: 1.5rem;
       }
 
+      .top-menu-info {
+        @include flex-row;
+        gap: 20px;
+      }
+
       .how-play {
         @include flex-column;
         gap: 2rem;
@@ -292,5 +298,3 @@ footer {
     }
   }
 }
-
-@import "scrollbar";

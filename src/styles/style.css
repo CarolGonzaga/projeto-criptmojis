@@ -53,6 +53,31 @@
     text-transform: uppercase;
   }
 }
+/* _scrollbar.scss */
+/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Para Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+}
+
 /* Mixins */
 /* Global */
 html {
@@ -258,6 +283,11 @@ main {
   font-family: "Jura", serif;
   font-size: 1.5rem;
 }
+.section-rules .rules .rules-container .top-menu-info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
 .section-rules .rules .rules-container .how-play {
   display: flex;
   flex-direction: column;
@@ -320,31 +350,6 @@ footer a {
 }
 footer a:hover {
   color: #f5efe7;
-}
-
-/* _scrollbar.scss */
-/* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-/* Para Firefox */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
 }
 
 /*# sourceMappingURL=style.css.map */
