@@ -1,5 +1,3 @@
-@use "variables";
-
 @font-face {
   font-family: "SugoDisplay";
   src: url("../assets/fonts/Sugo-Pro-Classic-Light-trial.ttf") format("truetype");
@@ -11,7 +9,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: variables.$font-secondary;
+  font-family: 'Poppins', serif;
 }
 
 /* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */

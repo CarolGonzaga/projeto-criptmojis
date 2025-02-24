@@ -1,7 +1,6 @@
-@use "reset";
-@use "variables";
 @use "mixins";
-@forward "responsive-game";
+@use "variables";
+@use "responsive-game";
 
 /* Global */
 body {
