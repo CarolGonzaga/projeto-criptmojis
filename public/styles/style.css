@@ -1,12 +1,15 @@
-/* Error: Two forwarded modules both define a variable named $font-primary.
- *   ,
- * 1 | @forward "reset";
- *   | ================ original @forward
- * 2 | @forward "responsive-index";
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^ new @forward
+/* Error: Module loop: this module is already being loaded.
+ *   ,--> src\scss\_responsive-index.scss
+ * 1 | @use "index";
+ *   | ^^^^^^^^^^^^ new load
  *   '
- *   src\scss\_index.scss 2:1  @use
- *   src\scss\style.scss 1:1   root stylesheet */
+ *   ,--> src\scss\style.scss
+ * 1 | @use "index";
+ *   | ============ original load
+ *   '
+ *   src\scss\_responsive-index.scss 1:1  @forward
+ *   src\scss\_index.scss 2:1             @use
+ *   src\scss\style.scss 1:1              root stylesheet */
 
 body::before {
   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
@@ -16,5 +19,5 @@ body::before {
   padding: 1em;
   margin-bottom: 1em;
   border-bottom: 2px solid black;
-  content: 'Error: Two forwarded modules both define a variable named $font-primary.\a   \2577 \a 1 \2502  @forward "reset";\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original @forward\a 2 \2502  @forward "responsive-index";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ new @forward\a   \2575 \a   src\\scss\\_index.scss 2:1  @use\a   src\\scss\\style.scss 1:1   root stylesheet';
+  content: 'Error: Module loop: this module is already being loaded.\a   \250c \2500 \2500 > src\\scss\\_responsive-index.scss\a 1 \2502  @use "index";\d\a   \2502  ^^^^^^^^^^^^ new load\a   \2575 \a   \250c \2500 \2500 > src\\scss\\style.scss\a 1 \2502  @use "index";\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original load\a   \2575 \a   src\\scss\\_responsive-index.scss 1:1  @forward\a   src\\scss\\_index.scss 2:1             @use\a   src\\scss\\style.scss 1:1              root stylesheet';
 }
