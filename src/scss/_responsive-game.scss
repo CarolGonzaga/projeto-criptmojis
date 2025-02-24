@@ -1,5 +1,4 @@
-@import "variables";
-@import "mixins";
+@use "index";
 
 @media (max-width: 350px) and (max-height: 570px) {
   /* Player Bet */

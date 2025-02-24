@@ -1,7 +1,4 @@
-@import "reset";
-@import "responsive-index";
-@import "variables";
-@import "scrollbar";
+@use "index";
 
 /* Mixins */
 @mixin flex-center {

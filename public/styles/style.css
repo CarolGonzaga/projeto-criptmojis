@@ -1,0 +1,20 @@
+/* Error: Two forwarded modules both define a variable named $font-primary.
+ *   ,
+ * 1 | @forward "reset";
+ *   | ================ original @forward
+ * 2 | @forward "responsive-index";
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^ new @forward
+ *   '
+ *   src\scss\_index.scss 2:1  @use
+ *   src\scss\style.scss 1:1   root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: Two forwarded modules both define a variable named $font-primary.\a   \2577 \a 1 \2502  @forward "reset";\d\a   \2502  \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  original @forward\a 2 \2502  @forward "responsive-index";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^ new @forward\a   \2575 \a   src\\scss\\_index.scss 2:1  @use\a   src\\scss\\style.scss 1:1   root stylesheet';
+}

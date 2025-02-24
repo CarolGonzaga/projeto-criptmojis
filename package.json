@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:sass": "sass styles/style.scss styles/style.css --watch",
-    "build": "npx sass src/scss/style.scss src/styles/style.css"
+    "build": "npx sass src/scss/style.scss public/styles/style.css"
   },
   "keywords": [],
   "author": "",

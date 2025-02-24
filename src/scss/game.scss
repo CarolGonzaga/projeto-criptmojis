@@ -1,8 +1,4 @@
-@import "variables";
-@import "reset";
-@import "mixins";
-@import "scrollbar";
-
+@use "index";
 
 /* Global */
 body {
@@ -472,4 +468,4 @@ body {
   display: none;
 }
 
-@import "responsive-game";
+@forward "responsive-game";
