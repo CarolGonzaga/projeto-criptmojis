@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npx sass src/scss/style.scss public/styles/style.css"
+    "build:ts": "tsc",
+    "build:css": "npx sass src/scss/style.scss public/styles/style.css",
+    "build": "npm run build:ts && npm run build:css"
   },
   "keywords": [],
   "author": "",
