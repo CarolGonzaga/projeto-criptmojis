@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:ts": "tsc",
     "build:css": "npx sass src/scss/style.scss public/styles/style.css",
-    "build": "npm run build:ts && npm run build:css"
+    "build:css-game": "npx sass src/scss/game.scss public/styles/game.css",
+    "build": "npm run build:ts && npm run build:css && npm run build:css-game"
   },
   "keywords": [],
   "author": "",

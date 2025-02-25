@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "./dist", // Garante que os arquivos compilados vão para a pasta dist
-    "rootDir": "./src", // Diz ao TypeScript que os arquivos .ts estão dentro de src
+    "outDir": "./public/scripts",
+    "rootDir": "./src/ts",
     "strict": true, 
     "module": "ES6",
     "target": "ES6",
