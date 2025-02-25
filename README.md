@@ -1,5 +1,5 @@
 # Projeto - Criptmojis
-- Desenvolvimento Front-End com TypeScript ([LINK](https://social-keen.vercel.app/))
+- Desenvolvimento Front-End com TypeScript ([LINK](https://projeto-criptmojis.vercel.app/))
 - Desafio de lógica com emojis, onde o objetivo é descobrir a sequência secreta!
 
 <br/>
