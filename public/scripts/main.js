@@ -450,7 +450,6 @@ function changeDifficulty(newDifficulty) {
     startGame(numAttempts, difficulty);
 }
 function generateGameHTML() {
-    console.log("Começou o jogo!");
     return `
   <div class="main">
     <div id="alert-box" class="alert-box hidden">
