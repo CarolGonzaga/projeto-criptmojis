@@ -285,6 +285,9 @@ main {
   font-size: 1.5rem;
   color: #213555;
 }
+.section-rules .close-btn {
+  margin-top: 20px;
+}
 
 /* Footer */
 footer {
