@@ -529,10 +529,19 @@ html {
     font-size: clamp(1.5rem, 9vw, 2.5rem);
   }
 }
+@media (min-width: 900px) and (min-height: 500px) {
+  /* Footer */
+  .footer .emojis-container ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+}
 @media (min-width: 1024px) and (min-height: 600px) {
   /* Footer */
   .footer .emojis-container ul {
-    border: 1px solid green;
     max-width: 100%;
     gap: 10px;
     margin-bottom: 20px;
