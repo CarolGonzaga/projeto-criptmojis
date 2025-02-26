@@ -547,7 +547,3 @@ function generateGameHTML() {
   </div>
   `;
 }
-const altura = screen.height;
-const largura = screen.width;
-alert(altura);
-alert(largura);
