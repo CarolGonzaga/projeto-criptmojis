@@ -332,5 +332,12 @@ footer a:hover {
     height: 100%;
   }
 }
+@media (max-width: 400px) and (min-height: 570px) {
+  html,
+  body {
+    font-size: 10px;
+    height: 100%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
