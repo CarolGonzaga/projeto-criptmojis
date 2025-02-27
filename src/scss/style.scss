@@ -1,7 +1,6 @@
 @use "reset";
 @use "mixins";
 @use "variables";
-@use "responsive-index";
 
 
 /* Global */
@@ -291,3 +290,5 @@ footer {
     }
   }
 }
+
+@import "responsive-index";
