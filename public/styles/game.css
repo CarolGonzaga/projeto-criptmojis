@@ -535,10 +535,10 @@ html {
   }
   .footer .emojis-container li button {
     height: 30px;
-    font-size: clamp(2.2rem, 3vh, 2.2rem);
+    font-size: 20px;
   }
 }
-@media (max-width: 359px) and (min-height: 570px) {
+@media (max-width: 300px) and (min-height: 570px) {
   body {
     overflow: hidden;
   }
@@ -557,7 +557,7 @@ html {
   }
   .footer .emojis-container li button {
     height: 30px;
-    font-size: clamp(1.5rem, 3vh, 2.2rem);
+    font-size: 20px;
   }
 }
 @media (min-width: 750px) and (min-height: 700px) {
