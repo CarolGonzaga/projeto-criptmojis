@@ -23,7 +23,7 @@ body {
 /* Container principal */
 .index {
   width: 65%;
-  height: 95vh;
+  height: 95%;
   @include mixins.flex-column;
   align-items: center;
   justify-content: space-between;

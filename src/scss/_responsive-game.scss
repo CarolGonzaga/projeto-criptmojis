@@ -27,15 +27,23 @@
   .footer {
     .emojis-container {
       ul {
-        gap: 10px;
+        max-width: 100%;
+        gap: clamp(10px, 5vw, 50px);;
         margin-top: 10px;
-        max-width: 400px;
+      }
+
+      li {
+        button {
+          height: 30px;
+          font-size: clamp(14px, 7vw, 30px);
+          border: 1px solid tomato;
+        }
       }
     }
   }
 }
 
-@media (max-width: 359px) {
+@media (max-width: 400px) and (min-height: 570px) {
   body {
     overflow: hidden;
   }
@@ -68,45 +76,7 @@
         button {
           height: 30px;
           font-size: 20px;
-        }
-      }
-    }
-  }
-}
-
-@media (max-width: 300px) and (min-height: 570px) {
-  body {
-    overflow: hidden;
-  }
-
-  /* Header */
-  .header {
-    .top {
-      h1 {
-        font-size: 1.7rem;
-      }
-
-      > div {
-        i {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-
-  /* Footer */
-  .footer {
-    .emojis-container {
-      ul {
-        max-width: 100%;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      li {
-        button {
-          height: 30px;
-          font-size: 20px;
+          border: 1px solid teal;
         }
       }
     }
