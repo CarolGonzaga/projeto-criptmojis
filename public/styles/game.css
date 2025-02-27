@@ -516,6 +516,50 @@ html {
     max-width: 400px;
   }
 }
+@media (max-width: 359px) {
+  body {
+    overflow: hidden;
+  }
+  /* Header */
+  .header .top h1 {
+    font-size: 1.7rem;
+  }
+  .header .top > div i {
+    font-size: 1rem;
+  }
+  /* Footer */
+  .footer .emojis-container ul {
+    max-width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .footer .emojis-container li button {
+    height: 30px;
+    font-size: clamp(2.2rem, 3vh, 2.2rem);
+  }
+}
+@media (max-width: 359px) and (min-height: 570px) {
+  body {
+    overflow: hidden;
+  }
+  /* Header */
+  .header .top h1 {
+    font-size: 1.7rem;
+  }
+  .header .top > div i {
+    font-size: 1rem;
+  }
+  /* Footer */
+  .footer .emojis-container ul {
+    max-width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  .footer .emojis-container li button {
+    height: 30px;
+    font-size: clamp(1.5rem, 3vh, 2.2rem);
+  }
+}
 @media (min-width: 750px) and (min-height: 700px) {
   /* Footer */
   .footer .emojis-container ul {
@@ -550,64 +594,6 @@ html {
     width: 100%;
     height: 40px;
     font-size: clamp(1.5rem, 9vw, 2.5rem);
-  }
-}
-@media (max-width: 359px) {
-  body {
-    overflow: hidden;
-  }
-  /* Header */
-  .header .top h1 {
-    font-size: 1.7rem;
-  }
-  .header .top > div i {
-    font-size: 1rem;
-  }
-  /* Player Bet */
-  .player-bet {
-    width: 100%;
-    height: 70px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2%;
-  }
-  .player-bet .bet-emojis {
-    height: 100%;
-    width: 80%;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1647058824);
-    background-color: #213555;
-    border-radius: 50px;
-    font-size: 3px;
-  }
-  .player-bet .bet-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #213555;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1647058824);
-    border-radius: 50px;
-    cursor: pointer;
-    height: 100%;
-    width: 20%;
-    color: #d8c4b6;
-    font-size: calc(50% + 1rem);
-  }
-  .player-bet .block {
-    pointer-events: none;
-  }
-  /* Footer */
-  .footer .emojis-container ul {
-    gap: 3px;
-    margin-top: 10px;
-    max-width: 400px;
   }
 }
 
